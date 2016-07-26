@@ -1,7 +1,6 @@
 import threading
 import time
 import RPi.GPIO as GPIO
-from . import cmdline
 
 # setup all the outputs
 GPIO.setup(18, GPIO.OUT)
@@ -141,7 +140,7 @@ def updateTimes():
     cath1=[]
     cath2=[]
     while(1):
-        west,east= cmdline.return_next('RAST')
+        west,east=#fetch from kevin
         cath1,cath2=newDigits()
         time.sleep(15)
 

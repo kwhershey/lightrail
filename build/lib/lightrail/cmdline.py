@@ -8,8 +8,8 @@ Options:
     -b                 Big text
     -x                 Expand station code to name
 """
-#from docopt import docopt
-#from pyfiglet import Figlet
+from docopt import docopt
+from pyfiglet import Figlet
 from . import utilities as utils
 import os
 from time import sleep
@@ -60,27 +60,6 @@ def display_station(station_code, big, expand):
         text = printed_name + '\n' + dep_text
         _print_text(text, big)
         _waiting_bar(30)
-        
-def return_next(station_code)
-    departures = utils.get_soon_departures(station_code)
-    minE=100
-    minW=100
-    for d in departures:
-        if d['direction']=='E':
-            if d['time']=='Due':
-                E=0
-            else:
-                E=int(d['time'][0])
-            if E<minE:
-                minE=E
-        if d['direction']=='W':
-            if d['time']=='Due':
-                W=0
-            else:
-                W=int(d['time'][0])
-            if W<minW:
-                minW=W
-    return minW,minE
 
 
 def main(args):
@@ -90,6 +69,6 @@ def main(args):
         display_station(args['<station_code>'].upper(), args['-b'], args['-x'])
 
 
-#if __name__ == '__main__':
-#    arguments = docopt(__doc__)
-#    main(arguments)
+if __name__ == '__main__':
+    arguments = docopt(__doc__)
+    main(arguments)
