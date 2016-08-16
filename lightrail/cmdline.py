@@ -10,7 +10,7 @@ Options:
 """
 #from docopt import docopt
 #from pyfiglet import Figlet
-from . import utilities as utils
+import utilities as utils
 import os
 from time import sleep
 import sys
@@ -61,23 +61,23 @@ def display_station(station_code, big, expand):
         _print_text(text, big)
         _waiting_bar(30)
         
-def return_next(station_code)
+def return_next(station_code):
     departures = utils.get_soon_departures(station_code)
     minE=100
     minW=100
     for d in departures:
-        if d['direction']=='E':
+        if d['direction']=='EASTBOUND':
             if d['time']=='Due':
-                E=0
+                E=100
             else:
-                E=int(d['time'][0])
+                E=int(d['time'].split(' ')[0])
             if E<minE:
                 minE=E
-        if d['direction']=='W':
+        if d['direction']=='WESTBOUND':
             if d['time']=='Due':
-                W=0
+                W=100
             else:
-                W=int(d['time'][0])
+                W=int(d['time'].split(' ')[0])
             if W<minW:
                 minW=W
     return minW,minE

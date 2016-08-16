@@ -1,4 +1,4 @@
-from . import mtapi
+import mtapi
 
 
 GREENLINE = 902
