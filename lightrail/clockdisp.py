@@ -49,7 +49,6 @@ def newDigits():
     d.append(west%10)
     d.append(east//10)
     d.append(east%10)
-    print(d)
     active=[]
     for i in range(4):
         if(d[i]==1):
@@ -141,15 +140,15 @@ pins[1]['rt']=(3,10)
 pins[2]['lb']=(5,13)
 pins[2]['lt']=(3,13)
 pins[2]['mb']=(5,16)
-pins[2]['mm']=(6,18)
+pins[2]['mm']=(5,18)
 pins[2]['mt']=(3,16)
 pins[2]['rb']=(5,15)
 pins[2]['rt']=(3,15)
 pins[3]['lb']=(5,19)
 pins[3]['lt']=(3,19)
 pins[3]['mb']=(5,23)
-pins[3]['mm']=(3,13)
-pins[3]['mt']=(3,22)
+pins[3]['mm']=(3,18)
+pins[3]['mt']=(3,23)
 pins[3]['rb']=(5,21)
 pins[3]['rt']=(3,21)
 
@@ -186,8 +185,6 @@ def updateTimes():
     cath2=[]
     while(1):
         west,east= cmdline.return_next('RAST')
-        print(west)
-        print( east )
         cath1,cath2=newDigits()
         time.sleep(15)
 
